@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxEstate | Premium Real Estate</title>
+    <link rel="stylesheet" href="real-estate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <nav class="navbar">
+            <div class="logo">LUX<span>ESTATE</span></div>
+            <ul class="nav-links">
+                <li><a href="#listings">Listings</a></li>
+                <li><a href="#tour">Virtual Tour</a></li>
+                <li><a href="#agents">Agents</a></li>
+                <li><a href="#contact" class="btn-gold">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Find Your <span class="text-gold">Everlasting</span> Sanctuary</h1>
+            <p>Experience the pinnacle of luxury living with curated properties in the world's most exclusive locations.</p>
+            <div class="search-bar glass-panel">
+                <input type="text" placeholder="Search by location, price or style...">
+                <button class="btn-gold">Search</button>
+            </div>
+        </div>
+    </header>
+
+    <section id="listings" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Listings</h2>
+            <div class="listings-grid">
+                <!-- Card 1 -->
+                <div class="property-card glass-panel reveal">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a6d?auto=format&fit=crop&w=800&q=80')">
+                        <div class="tour-badge">Virtual Tour</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>The Azure Villa</h3>
+                        <p class="location">Malibu, California</p>
+                        <p class="price">$12,500,000</p>
+                        <button class="btn-outline">View Details</button>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="property-card glass-panel reveal">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600607687940-4adC7737973c?auto=format&fit=crop&w=800&q=80')">
+                        <div class="tour-badge">Virtual Tour</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Golden Heights Manor</h3>
+                        <p class="location">Aspen, Colorado</p>
+                        <p class="price">$8,900,000</p>
+                        <button class="btn-outline">View Details</button>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="property-card glass-panel reveal">
+                    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1600566753086-005ee7746f6a?auto=format&fit=crop&w=800&q=80')">
+                        <div class="tour-badge">Virtual Tour</div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Emerald Oasis</h3>
+                        <p class="location">Miami, Florida</p>
+                        <p class="price">$15,200,000</p>
+                        <button class="btn-outline">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tour" class="section tour-section">
+        <div class="container">
+            <div class="tour-preview glass-panel reveal">
+                <div class="tour-content">
+                    <h2>Interactive Virtual Tour</h2>
+                    <p>Step inside our most exclusive estates from anywhere in the world. A seamless, 360° cinematic experience.</p>
+                    <div class="tour-mockup">
+                        <img src="https://images.unsplash.com/photo-1600607687644-7d777397200d?auto=format&fit=crop&w=1200&q=80" alt="Virtual Tour Preview">
+                        <div class="hotspot" style="top: 30%; left: 40%;"></div>
+                        <div class="hotspot" style="top: 60%; left: 70%;"></div>
+                        <div class="hotspot" style="top: 40%; left: 20%;"></div>
+                    </div>
+                    <button class="btn-gold">Start Full Experience</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agents" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Elite Advisors</h2>
+            <div class="agents-grid">
+                <div class="agent-card glass-panel reveal">
+                    <div class="agent-img" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80')"></div>
+                    <h3>Julian Thorne</h3>
+                    <p class="specialty">Luxury Estate Specialist</p>
+                    <div class="rating">★★★★★</div>
+                    <p class="exp">15+ Years Experience</p>
+                </div>
+                <div class="agent-card glass-panel reveal">
+                    <div class="agent-img" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a1?auto=format&fit=crop&w=400&q=80')"></div>
+                    <h3>Elena Vance</h3>
+                    <p class="specialty">International Portfolio Manager</p>
+                    <div class="rating">★★★★★</div>
+                    <p class="exp">12+ Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-wrapper glass-panel reveal">
+                <h2>Request a Private Consultation</h2>
+                <p>Connect with our advisors for a bespoke property search.</p>
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your dream property..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-gold">Send Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 LUXESTATE. All Rights Reserved. Designed for Excellence.</p>
+    </footer>
+
+    <script src="real-estate.js"></script>
+</body>
+</html>

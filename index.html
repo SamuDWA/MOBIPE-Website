@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alucinações da IA: Como Evitar | Método A.C.E.R.T.O.</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.12.0/tsparticles.confetti.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- SVG Filter for Grain/Noise Texture -->
+  <svg style="display: none;">
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="saturate" values="0" />
+    </filter>
+  </svg>
+
+  <div id="canvas-container"></div>
+  <div class="blob-container">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+  <div class="grain-overlay"></div>
+
+  <!-- Notificação de copiado -->
+  <div id="toast" class="toast">Prompt copiado com sucesso!</div>
+
+  <header>
+    <div class="header-content">
+      <h1>Alucinações da IA: Como Evitar</h1>
+      <p class="subtitulo">Método A.C.E.R.T.O.</p>
+      <p class="info-adicional">Uso consciente da IA</p>
+      <button id="theme-toggle" aria-label="Alternar tema">🌙</button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="metodo">📖 O Método</button>
+    <button class="tab-btn" data-tab="ferramenta">🛠️ Ferramenta</button>
+    <button class="tab-btn" data-tab="gerador">✨ Gerador</button>
+  </nav>
+
+  <main>
+    <!-- ==================== ABA 1: O MÉTODO ==================== -->
+    <section id="metodo" class="tab-content active">
+      <div class="card intro fade-in">
+        <h2>O que é o Método A.C.E.R.T.O.?</h2>
+        <p>
+          O Método A.C.E.R.T.O. é um conjunto de passos práticos criado para reduzir o risco de alucinações da Inteligência Artificial. 
+          Ele ajuda a pessoa a fazer melhores perguntas e a verificar as respostas de forma mais consciente e segura.
+        </p>
+      </div>
+
+      <div class="card fade-in">
+        <h2>O que consideramos Alucinação?</h2>
+        <p>No Método A.C.E.R.T.O., consideramos alucinação quando a IA:</p>
+        <ul class="lista-alucinacao">
+          <li>Inventa fatos, datas, nomes ou dados</li>
+          <li>Cita fontes, estudos ou referências que não existem</li>
+          <li>Apresenta opinião como se fosse fato comprovado</li>
+          <li>Demonstra certeza excessiva sem base</li>
+          <li>Cria informações inconsistentes ou contraditórias</li>
+        </ul>
+      </div>
+
+      <div class="card fade-in">
+        <h2>Significado da Sigla A.C.E.R.T.O.</h2>
+        <div class="sigla-grid">
+          <div class="sigla-item"><strong>A</strong> – Apresente o contexto</div>
+          <div class="sigla-item"><strong>C</strong> – Cite fontes</div>
+          <div class="sigla-item"><strong>E</strong> – Exija nível de certeza</div>
+          <div class="sigla-item"><strong>R</strong> – Reconheça limitações</div>
+          <div class="sigla-item"><strong>T</strong> – Transforme em versão mais segura</div>
+          <div class="sigla-item"><strong>O</strong> – Observe e compare com outras fontes</div>
+        </div>
+      </div>
+
+      <div class="card versao-rapida fade-in">
+        <h2>Versão Rápida <span class="tag">3 passos essenciais</span></h2>
+        <p>Para o dia a dia, você pode usar só estes três passos:</p>
+        <ol class="lista-rapida">
+          <li><strong>Peça fontes</strong> e nível de certeza</li>
+          <li><strong>Peça para a IA apontar limitações</strong></li>
+          <li><strong>Sempre compare</strong> com outra fonte</li>
+        </ol>
+        <button id="copy-rapido" class="btn-secundario">
+          <span class="btn-text">Copiar Versão Rápida</span>
+        </button>
+      </div>
+
+      <div class="card fase1 fade-in">
+        <h2>Fase 1 – Prevenção <span class="tag">Antes de perguntar</span></h2>
+        <p>Use estes passos na hora de escrever sua pergunta para a IA:</p>
+        <div class="passos-container">
+          <div class="passo">
+            <div class="passo-numero">1</div>
+            <div class="passo-conteudo">
+              <h3>Apresente o contexto</h3>
+              <p>Explique claramente o que você precisa e o contexto da pergunta.</p>
+              <div class="exemplo">“Estou fazendo um trabalho escolar sobre o tema X. Me explique de forma clara e objetiva.”</div>
+            </div>
+          </div>
+          <div class="passo">
+            <div class="passo-numero">2</div>
+            <div class="passo-conteudo">
+              <h3>Cite fontes</h3>
+              <p>Peça para a IA indicar de onde veio a informação.</p>
+              <div class="exemplo">“Cite fontes ou referências confiáveis sempre que possível.”</div>
+            </div>
+          </div>
+          <div class="passo">
+            <div class="passo-numero">3</div>
+            <div class="passo-conteudo">
+              <h3>Exija nível de certeza</h3>
+              <p>Peça para a IA informar o quanto ela tem certeza da resposta.</p>
+              <div class="exemplo">“Indique seu nível de certeza de 0 a 10 e explique o motivo.”</div>
+            </div>
+          </div>
+          <div class="passo">
+            <div class="passo-numero">4</div>
+            <div class="passo-conteudo">
+              <h3>Reconheça limitações</h3>
+              <p>Force a IA a admitir o que ela pode não saber ou onde pode errar.</p>
+              <div class="exemplo">“Quais são as possíveis limitações ou pontos fracos da sua resposta?”</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card fase2 fade-in">
+        <h2>Fase 2 – Verificação <span class="tag">Depois de receber a resposta</span></h2>
+        <p>Depois que a IA responder, use estes passos:</p>
+        <div class="passos-container">
+          <div class="passo">
+            <div class="passo-numero">5</div>
+            <div class="passo-conteudo">
+              <h3>Transforme em versão mais segura</h3>
+              <p>Peça para a IA reescrever a resposta de forma mais cautelosa.</p>
+              <div class="exemplo">“Reescreva a resposta de forma mais cuidadosa, evitando informações sem base clara.”</div>
+            </div>
+          </div>
+          <div class="passo">
+            <div class="passo-numero">6</div>
+            <div class="passo-conteudo">
+              <h3>Observe e compare</h3>
+              <p>Nunca use a resposta sozinha. Compare com outras fontes confiáveis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card modelo fade-in">
+        <h2>Modelo de Prompt Pronto (Versão Completa)</h2>
+        <p>Copie e cole este texto sempre que for fazer uma pergunta importante:</p>
+        <div class="prompt-box">
+          <pre id="prompt-text">Responda a pergunta a seguir com o máximo de precisão possível.
+1. Apresente as informações de forma clara e contextualizada.
+2. Cite fontes ou referências sempre que possível.
+3. Informe seu nível de certeza de 0 a 10.
+4. Separe o que é fato e o que é opinião.
+5. Aponte possíveis limitações da resposta.
+6. Se não tiver certeza sobre algo, diga claramente.
+
+Pergunta: [escreva aqui sua pergunta]</pre>
+          <button id="copy-btn" class="btn-secundario"><span class="btn-text">Copiar Prompt</span></button>
+        </div>
+      </div>
+
+      <div class="card aviso fade-in">
+        <h2>Importante</h2>
+        <p>
+          Mesmo usando o Método A.C.E.R.T.O., a resposta da IA <strong>não substitui</strong> a verificação humana.
+          O método serve para diminuir erros, mas não elimina completamente o risco de alucinações.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 2: FERRAMENTA ==================== -->
+    <section id="ferramenta" class="tab-content">
+      <div class="card fade-in">
+        <h2>Ferramenta de Aplicação do Método</h2>
+        <p>Cole abaixo uma resposta gerada por Inteligência Artificial. O sistema vai analisar o texto e aplicar o Método A.C.E.R.T.O.</p>
+        <textarea id="input-texto" placeholder="Cole aqui a resposta da IA..." rows="8"></textarea>
+        <div class="botoes-ferramenta">
+          <button id="analisar-btn" class="btn-principal destaque">Aplicar Método A.C.E.R.T.O.</button>
+          <button id="limpar-btn" class="btn-secundario">Limpar</button>
+        </div>
+      </div>
+
+      <div id="resultado" class="card resultado escondido fade-in">
+        <h2>Resultado da Análise</h2>
+        <div class="score-box">
+          <div class="score-label">Nível de Atenção Recomendado</div>
+          <div id="score-valor" class="score-valor">—</div>
+          <div id="score-descricao" class="score-descricao"></div>
+        </div>
+        <div class="analise-section">
+          <h3>Pontos de Atenção Encontrados</h3>
+          <ul id="lista-problemas"></ul>
+        </div>
+        <div class="analise-section">
+          <h3>Prompt de Verificação Gerado</h3>
+          <p>Copie o prompt abaixo e cole na IA para pedir uma versão mais segura:</p>
+          <div class="prompt-box">
+            <pre id="prompt-gerado"></pre>
+            <button id="copy-prompt-gerado" class="btn-secundario"><span class="btn-text">Copiar Prompt</span></button>
+          </div>
+        </div>
+        <div class="analise-section">
+          <h3>Checklist Rápido de Verificação</h3>
+          <ul class="checklist">
+            <li>A resposta cita fontes?</li>
+            <li>Existem datas, nomes ou números específicos?</li>
+            <li>A linguagem parece excessivamente confiante?</li>
+            <li>Você conseguiu confirmar as informações principais em outra fonte?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== ABA 3: GERADOR ==================== -->
+    <section id="gerador" class="tab-content">
+      <div class="card fade-in">
+        <h2>Gerador de Prompt Personalizado</h2>
+        <p>Preencha os campos abaixo. A prévia do prompt é atualizada automaticamente enquanto você digita.</p>
+
+        <div class="form-group">
+          <label for="contexto">Contexto / Situação</label>
+          <input type="text" id="contexto" placeholder="Ex: Trabalho escolar sobre energia solar">
+        </div>
+
+        <div class="form-group">
+          <label for="pergunta">Sua pergunta principal</label>
+          <textarea id="pergunta" rows="3" placeholder="Ex: Quais são as principais vantagens e desvantagens da energia solar?"></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nivel">Nível de detalhe</label>
+            <select id="nivel">
+              <option value="simples">Simples e objetivo</option>
+              <option value="medio" selected>Médio</option>
+              <option value="detalhado">Bem detalhado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tom">Tom da resposta</label>
+            <select id="tom">
+              <option value="simples">Simples</option>
+              <option value="didatico" selected>Didático</option>
+              <option value="formal">Formal</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="botoes-ferramenta">
+          <button id="gerar-prompt-btn" class="btn-principal destaque">Gerar Prompt Personalizado</button>
+          <button id="limpar-gerador" class="btn-secundario">Limpar campos</button>
+        </div>
+      </div>
+
+      <!-- Prévia ao vivo -->
+      <div class="card fade-in" id="preview-card">
+        <h2>Prévia do Prompt</h2>
+        <div class="prompt-box preview-box">
+          <pre id="preview-prompt">Preencha os campos acima para ver a prévia do prompt...</pre>
+        </div>
+      </div>
+
+      <div id="resultado-gerador" class="card escondido fade-in">
+        <h2>Seu Prompt Personalizado</h2>
+        <div class="prompt-box">
+          <pre id="prompt-personalizado"></pre>
+          <button id="copy-personalizado" class="btn-secundario">
+            <span class="btn-text">Copiar Prompt</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto sobre Alucinações da IA • Método A.C.E.R.T.O.</p>
+    <p class="footer-small">Desenvolvido para uso consciente da Inteligência Artificial</p>
+  </footer>
+
+  <button id="back-to-top" aria-label="Voltar ao topo">↑</button>
+  <script src="script.js"></script>
+</body>
+</html>
